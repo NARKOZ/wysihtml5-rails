@@ -7,7 +7,7 @@ A wysiwyg text editor for use in the Rails 3 asset pipeline.
 Add to your Gemfile:
 
 ```ruby
-gem 'wysihtml5-rails', github: 'NARKOZ/wysihtml5-rails'
+gem 'wysihtml5-rails'
 ```
 
 and run:
