@@ -4,30 +4,87 @@ A wysiwyg text editor for use in the Rails 3 asset pipeline.
 
 ## Installation
 
-Add this line to your application's Gemfile:
+Add to your Gemfile:
 
-    gem 'wysihtml5-rails', github: 'NARKOZ/wysihtml5-rails'
+```ruby
+gem 'wysihtml5-rails', github: 'NARKOZ/wysihtml5-rails'
+```
 
-And then execute:
+and run:
 
-    $ bundle
+```sh
+bundle install
+```
 
 ## Usage
 
 Require it in your JS manifest's file:
 
-    //= require advanced
-    //= require wysihtml5
+```js
+//= require wysihtml5
+```
 
 Add to your template before closing `body` html tag:
 
-    <script>
-      var editor = new wysihtml5.Editor("wysihtml5-textarea", { // id of textarea element
-        toolbar:      "wysihtml5-toolbar", // id of toolbar element
-        stylesheets:  "<%= stylesheet_path('wysihtml5') %>", // optional, css to style the editor's content
-        parserRules:  wysihtml5ParserRules
-      });
-    </script>
+```html
+<script>
+  var editor = new wysihtml5.Editor("wysihtml5-textarea", { // id of textarea element
+    toolbar:      "wysihtml5-toolbar", // id of toolbar element
+    stylesheets:  "<%= stylesheet_path('wysiwyg') %>", // optional, css to style the editor's content
+    parserRules:  wysihtml5ParserRules // defined in parser rules set
+  });
+</script>
+```
+
+## Usage example
+
+Add to `application.js`
+
+```js
+//= require wysihtml5/parser_rules/simple
+//= require wysihtml5/wysihtml5
+```
+
+Create form with wysihtml5 textarea:
+
+```erb
+<div id="wysihtml5-toolbar" style="display: none;">
+  <a data-wysihtml5-command="bold">bold</a>
+  <a data-wysihtml5-command="italic">italic</a>
+  <a data-wysihtml5-command="underline">underline</a>
+
+  <a data-wysihtml5-command="insertOrderedList">insert ordered list</a>
+  <a data-wysihtml5-command="insertUnorderedList">insert unordered list</a>
+
+  <a data-wysihtml5-command="foreColor" data-wysihtml5-command-value="red">red</a>
+  <a data-wysihtml5-command="foreColor" data-wysihtml5-command-value="green">green</a>
+  <a data-wysihtml5-command="foreColor" data-wysihtml5-command-value="blue">blue</a>
+
+  <a data-wysihtml5-command="createLink">insert link</a>
+  <div data-wysihtml5-dialog="createLink" style="display: none;">
+    <label>
+      Link: <input data-wysihtml5-dialog-field="href" value="http://" class="text">
+    </label>
+    <a data-wysihtml5-dialog-action="save">OK</a>
+    <a data-wysihtml5-dialog-action="cancel">Cancel</a>
+  </div>
+</div>
+
+<%= form_for @post do |f| %>
+  <p><%= f.text_area :content, :id => 'wysihtml5-textarea' %></p>
+  <p><%= f.submit %></p>
+<% end %>
+
+<script>
+  var editor = new wysihtml5.Editor("wysihtml5-textarea", {
+    toolbar:      "wysihtml5-toolbar",
+    stylesheets:  "<%= stylesheet_path('wysiwyg') %>",
+    parserRules:  wysihtml5ParserRules
+  });
+</script>
+```
+
+For more information, check out [wysihtml5 wiki](https://github.com/xing/wysihtml5/wiki).
 
 ## License
 
