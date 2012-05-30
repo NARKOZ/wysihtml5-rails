@@ -6,7 +6,7 @@ Gem::Specification.new do |gem|
   gem.email         = ["mail@narkoz.me"]
   gem.description   = %q{A wysiwyg text editor for use in the Rails 3 asset pipeline}
   gem.summary       = %q{wysihtml5 for rails}
-  gem.homepage      = ""
+  gem.homepage      = "https://github.com/narkoz/wysihtml5-rails"
 
   gem.files         = `git ls-files`.split($\)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
