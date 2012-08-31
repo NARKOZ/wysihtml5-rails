@@ -21,6 +21,7 @@ bundle install
 Require it in your JS manifest's file:
 
 ```js
+//= require wysihtml5/parser_rules/advanced
 //= require wysihtml5
 ```
 
