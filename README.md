@@ -21,8 +21,14 @@ bundle install
 Require it in your JS manifest's file:
 
 ```js
-//= require wysihtml5/parser_rules/advanced
 //= require wysihtml5
+```
+
+Additionally include advanced or simple 
+[parser rule](https://github.com/NARKOZ/wysihtml5-rails/tree/master/vendor/assets/javascripts/parser_rules):
+
+```js
+//= require parser_rules/advanced
 ```
 
 Add to your template before closing `body` html tag:
@@ -42,8 +48,8 @@ Add to your template before closing `body` html tag:
 Add to `application.js`
 
 ```js
-//= require wysihtml5/parser_rules/simple
-//= require wysihtml5/wysihtml5
+//= require wysihtml5
+//= require parser_rules/simple
 ```
 
 Create form with wysihtml5 textarea:
