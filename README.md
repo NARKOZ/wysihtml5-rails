@@ -24,11 +24,11 @@ Require it in your JS manifest's file:
 //= require wysihtml5
 ```
 
-Additionally include advanced or simple 
+Additionally include `advanced` or `simple`
 [parser rule](https://github.com/NARKOZ/wysihtml5-rails/tree/master/vendor/assets/javascripts/parser_rules):
 
 ```js
-//= require parser_rules/advanced
+//= require parser_rules/simple
 ```
 
 Add to your template before closing `body` html tag:
@@ -49,7 +49,7 @@ Add to `application.js`
 
 ```js
 //= require wysihtml5
-//= require parser_rules/simple
+//= require parser_rules/advanced
 ```
 
 Create form with wysihtml5 textarea:
