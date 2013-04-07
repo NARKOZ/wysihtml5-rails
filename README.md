@@ -96,4 +96,4 @@ For more information, check out [wysihtml5 wiki](https://github.com/xing/wysihtm
 ## License
 
 wysihtml5 is distributed under the MIT License.  
-wysihtml5-rails is licensed under new BSD License.
+wysihtml5-rails is licensed under BSD License.
