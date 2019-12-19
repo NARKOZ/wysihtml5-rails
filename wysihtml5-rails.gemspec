@@ -3,7 +3,7 @@ require File.expand_path('../lib/wysihtml5-rails/version', __FILE__)
 
 Gem::Specification.new do |gem|
   gem.authors       = ["Nihad Abbasov"]
-  gem.email         = ["mail@narkoz.me"]
+  gem.email         = ["nihad@42na.in"]
   gem.description   = %q{A wysiwyg text editor for use in the Rails 3 asset pipeline}
   gem.summary       = %q{wysihtml5 for rails}
   gem.homepage      = "https://github.com/narkoz/wysihtml5-rails"
